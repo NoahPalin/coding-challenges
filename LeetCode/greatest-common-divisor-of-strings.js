@@ -17,18 +17,31 @@ Output: ""
 */
 
 const gcdOfStrings = (str1, str2) => {
-  const str1Length = str1.length;
-  const str2Length = str2.length;
-  if (!str1.includes(str2)) {
-    return '';
-  } else if (str1Length % str2Length === 0) {
-    return str2;
-  }
+  const longStr = str1.length > str2.length ? str1 : str2;
+  const shortStr = str1.length > str2.length ? str2 : str1;
 
-  for (let i = 0; i < str2Length; i++) {
-    
-  }
+  // potentialSolution holds the soltion unless another longer one is found.
+  let potentialSolution = '';
 
+  for (let i = 0; i < shortStr.length; i++) {
+
+    // basePattern is the pattern that is being tested for repetition.
+    const basePattern = shortStr.substring(0, i + 1);
+    if (longStr.length % basePattern.length === 0) {
+
+      // multiples is the number of times the basePattern needs to be repeated so that the string lengths will match.
+      const multiples = longStr.length / basePattern.length;
+
+      // How many times basePattern divides into both the long and short string.
+      const longMultiples = longStr.length / basePattern.length;
+      const shortMultiples = shortStr.length / basePattern.length;
+      if (basePattern.repeat(longMultiples) === longStr && basePattern.repeat(shortMultiples) === shortStr) {
+        potentialSolution = basePattern;
+      }
+    }
+  }
+  return potentialSolution;
 };
 
-gcdOfStrings('ABABAB', 'ABAB');
+
+console.log(gcdOfStrings('TAUXXTAUXXTAUXXTAUXXTAUXX', 'TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX'));
