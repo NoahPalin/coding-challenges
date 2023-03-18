@@ -8,7 +8,7 @@ const rollFormatter = function (rollCount, dice1, dice2, extra = "") {
 
 for (let rollCount = 1; rollCount <= 100; rollCount++) {
 
-  // Generates and integer from 1 to 6.
+  // Generates an integer from 1 to 6.
   let dice1 = Math.floor(Math.random() * 6) + 1;
   let dice2 = Math.floor(Math.random() * 6) + 1;
   let total = dice1 + dice2;
