@@ -5,7 +5,7 @@ const rollFormatter = function (rollCount, dice1, dice2, extra = "") {
   console.log(result);
 };
 
-
+// Loops 100 times to simulate 100 rolls.
 for (let rollCount = 1; rollCount <= 100; rollCount++) {
 
   // Generates an integer from 1 to 6.
