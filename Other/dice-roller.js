@@ -1,7 +1,8 @@
+// Helper Function.
 const rollFormatter = function (rollCount, dice1, dice2, extra = "") {
 
   // Formats then prints the result.
-  const result = `RollNo : ${rollCount} - Dice1: ${dice1} - Dice2: ${dice2} - Total: 9 - Extra= ${extra}`;
+  const result = `RollNo : ${rollCount} - Dice1: ${dice1} - Dice2: ${dice2} - Total: ${dice1 + dice2} - Extra= ${extra}`;
   console.log(result);
 };
 
