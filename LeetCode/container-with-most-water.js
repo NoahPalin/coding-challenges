@@ -6,22 +6,18 @@ const containerWithMostWater = (heightArr) => {
   for (let i = 1; i < heightArr.length; i++) {
     for (let j = 1; j < heightArr.length; j++) {
       let maxHeight = heightArr[i];
-
       if (maxHeight <= heightArr[j]) {
-
         potentialMax = maxHeight * (j - i);
         if (potentialMax > currentMax) {
           currentMax = potentialMax;
         }
       } else if (maxHeight > heightArr[j]) {
         maxHeight = heightArr[j];
-
         potentialMax = maxHeight * (j - i);
         if (potentialMax > currentMax) {
           currentMax = potentialMax;
         }
       }
-
     }
   }
   return currentMax;
